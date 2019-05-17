@@ -11,6 +11,7 @@ function affiliateRoutes(app) {
     app.get('/tweet-report', (req, res) => {
         AffiliateService.getTweets()
             .then(tweets => res.json(tweets))
+            .catch(err => res.json(err))
     })
 
 }

@@ -13,7 +13,6 @@ connection.connect(err => {
 })
 
 async function runSQL(query) {
-  console.log(query)
   return new Promise((resolve, reject) => {
     connection.query(query, function (error, results, fields) {
       if (error) reject(error);
@@ -21,12 +20,6 @@ async function runSQL(query) {
     });
   })
 }
-
-// connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
-//   if (error) throw error;
-//   console.log('The solution is: ', results[0].solution);
-// });
-
 
 module.exports = {
   runSQL
